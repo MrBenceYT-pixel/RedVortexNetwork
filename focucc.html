@@ -3,143 +3,308 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>RedVortexNetwork</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
 <style>
+
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg,#0f0f0f,#1a0000);
-    color:white;
+margin:0;
+font-family:'Orbitron',sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
 header{
-    background:#120000;
-    padding:20px;
-    text-align:center;
-    border-bottom:2px solid red;
-}
-
-header h1{
-    margin:0;
-    color:red;
-}
-
-nav{
-    margin-top:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,0.6);
+border-bottom:2px solid red;
 }
 
 nav a{
-    color:white;
-    margin:0 15px;
-    text-decoration:none;
+margin:0 15px;
+text-decoration:none;
+color:white;
+font-size:18px;
 }
 
 nav a:hover{
-    color:red;
+color:red;
 }
 
 .hero{
-    text-align:center;
-    padding:120px 20px;
+text-align:center;
+padding:120px 20px;
 }
 
-.hero h2{
-    font-size:48px;
-    color:red;
+.hero img{
+width:420px;
+animation:float 4s ease-in-out infinite;
+filter:drop-shadow(0 0 30px red);
 }
 
-.hero p{
-    font-size:20px;
-    opacity:0.8;
+@keyframes float{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0px);}
+
 }
 
-.btn{
-    display:inline-block;
-    padding:15px 30px;
-    margin-top:20px;
-    background:red;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
+.hero h1{
+font-size:40px;
+margin-top:20px;
+color:red;
 }
 
-.btn:hover{
-    background:#ff3c3c;
+.join-btn{
+
+background:red;
+padding:16px 40px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+display:inline-block;
+margin-top:25px;
+font-size:20px;
+
 }
 
 .section{
-    padding:80px 20px;
-    text-align:center;
+
+padding:100px 20px;
+text-align:center;
+
+}
+
+.cards{
+
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+
+}
+
+.card{
+
+background:#111;
+padding:30px;
+border-radius:15px;
+width:220px;
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:scale(1.1);
+box-shadow:0 0 30px red;
+
+}
+
+.shop{
+
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+
+}
+
+.rank{
+
+background:#111;
+padding:30px;
+border-radius:15px;
+width:200px;
+
+}
+
+.rank button{
+
+background:red;
+border:none;
+padding:12px 25px;
+color:white;
+border-radius:8px;
+cursor:pointer;
+
 }
 
 footer{
-    background:#0b0000;
-    text-align:center;
-    padding:20px;
-    border-top:2px solid red;
-}
-</style>
 
+background:#080000;
+padding:30px;
+text-align:center;
+border-top:2px solid red;
+
+}
+
+</style>
 </head>
 
 <body>
 
+<div id="particles"></div>
+
 <header>
-<h1>RedVortexNetwork</h1>
+
+<h2 style="color:red;">RedVortex</h2>
 
 <nav>
 <a href="#">Főoldal</a>
-<a href="#">Szerver</a>
-<a href="#">Discord</a>
-<a href="#">Kapcsolat</a>
+<a href="#server">Szerver</a>
+<a href="#staff">Staff</a>
+<a href="#shop">Webshop</a>
+<a href="#discord">Discord</a>
 </nav>
 
 </header>
 
-
 <section class="hero">
 
-<h2>Üdv a RedVortexNetwork oldalon</h2>
+<img src="logo.png">
 
-<p>Gaming közösség • Minecraft szerver • Community</p>
+<h1>RedVortexNetwork</h1>
 
-<a class="btn" href="#">Csatlakozás</a>
+<p>Minecraft Survival • Community • Events</p>
 
-</section>
-
-
-<section class="section">
-
-<h2>Szerver információ</h2>
-
-<p>
-IP: <b>play.redvortexnetwork.hu</b>
-</p>
-
-<p>
-Csatlakozz a közösséghez és építs velünk!
-</p>
+<a class="join-btn">Csatlakozás</a>
 
 </section>
 
+<section id="server" class="section">
 
-<section class="section">
+<h2>Szerver státusz</h2>
 
-<h2>Közösség</h2>
-
-<p>
-Discord szerver hamarosan!
-</p>
+<p id="serverStatus">Betöltés...</p>
 
 </section>
 
+<section id="staff" class="section">
+
+<h2>Staff csapat</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://mc-heads.net/avatar/Notch" width="80">
+<h3>Tulaj</h3>
+<p>RedVortex</p>
+</div>
+
+<div class="card">
+<img src="https://mc-heads.net/avatar/Herobrine" width="80">
+<h3>Admin</h3>
+<p>Admin1</p>
+</div>
+
+<div class="card">
+<img src="https://mc-heads.net/avatar/Steve" width="80">
+<h3>Moderátor</h3>
+<p>Mod1</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="shop" class="section">
+
+<h2>Rang Webshop</h2>
+
+<div class="shop">
+
+<div class="rank">
+<h3>VIP</h3>
+<p>5€</p>
+<button>Vásárlás</button>
+</div>
+
+<div class="rank">
+<h3>MVP</h3>
+<p>10€</p>
+<button>Vásárlás</button>
+</div>
+
+<div class="rank">
+<h3>LEGEND</h3>
+<p>20€</p>
+<button>Vásárlás</button>
+</div>
+
+</div>
+
+</section>
+
+<section id="discord" class="section">
+
+<h2>Discord</h2>
+
+<iframe src="https://discord.com/widget?id=YOURID&theme=dark"
+width="350"
+height="500"
+allowtransparency="true"
+frameborder="0"></iframe>
+
+</section>
 
 <footer>
 
-<p>© 2026 RedVortexNetwork</p>
+© 2026 RedVortexNetwork
 
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+
+particlesJS("particles",{
+particles:{
+number:{value:120},
+color:{value:"#ff0000"},
+shape:{type:"circle"},
+opacity:{value:0.5},
+size:{value:3},
+move:{speed:2}
+}
+});
+
+fetch("https://api.mcsrvstat.us/2/play.redvortexnetwork.hu")
+.then(res=>res.json())
+.then(data=>{
+
+if(data.online){
+
+document.getElementById("serverStatus").innerHTML=
+"🟢 Online játékosok: "+data.players.online;
+
+}else{
+
+document.getElementById("serverStatus").innerHTML=
+"🔴 Offline";
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
